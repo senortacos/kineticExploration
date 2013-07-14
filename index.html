@@ -1,21 +1,47 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Kenetic Exploration</title>
-  <meta name="description" content="Kenetic Exploration">
-  <meta name="author" content="roguequery">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <h1>Welcome to Kenetic Exploration</h1>
-  <canvas id="myCanvas" width="500" height="500" </canvas>
-  <script>
-  	var c=document.getElementById("myCanvas");
-	var ctx=c.getContext("2d");
-	ctx.fillStyle="#FFFFFF";
-	ctx.fillRect(0,0,500,500);
-  </script>
-  <script src="js/scripts.js"></script>
-</body>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+    
+	<meta charset="utf-8">
+	<title>Kenetic Exploration</title>
+	<meta name="description" content="Kenetic Exploration">
+	<meta name="author" content="roguequery">
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/scripts.js"></script>
+    <script src="js/kinetic-v4.5.4.min.js"></script>
+  </head>
+  <body>
+  	<h1>Welcome to Kinetic Exploration</h1>
+    <div id="container"></div>
+    <script defer="defer">
+      var stage = new Kinetic.Stage({
+        container: 'container',
+        width: 578,
+        height: 200
+      });
+
+      var layer = new Kinetic.Layer();
+
+      var circle = new Kinetic.Circle({
+        x: stage.getWidth() / 2,
+        y: stage.getHeight() / 2,
+        radius: 70,
+        fill: 'red',
+        stroke: 'black',
+        strokeWidth: 4
+      });
+
+      // add the shape to the layer
+      layer.add(circle);
+
+      // add the layer to the stage
+      stage.add(layer);
+    </script>
+  </body>
 </html>
